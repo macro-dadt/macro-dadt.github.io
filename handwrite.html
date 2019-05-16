@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" class="no-js" data-scroll-dir-x="0" data-scroll-dir-y="-1">
+<head>
+
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+
+  <script type="text/javascript" src="js/handwriting.canvas.js"></script>
+  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<style>
+html, body {
+            height: 100%;
+            margin: 0;
+        }
+#can{
+  border: 0 !important;
+  min-height: 100%;
+}
+</style>
+</head>
+
+<body>
+  <canvas id="can" width="400" height="400" style="border: 2px solid; cursor: crosshair;"></canvas>
+
+<script>
+    var can1 = new handwriting.Canvas(document.getElementById("can"));
+    //Set callback function
+    can1.setCallBack(function(data, err) {
+        if(err) throw err;
+        else{
+          // console.log(data);
+          text="";
+          for (i = 0; i < data.length; i++) {
+            text += data[i] + ";";
+          }
+          console.log(text);
+        }
+    });
+
+    //Set line width shown on the canvas element (default: 3)
+    can1.setLineWidth(5);
+
+    //Set options
+    can1.setOptions(
+        {
+            language: "ja",
+            numOfWords : 1,      //int, number of words of input trace, default: undefined
+            numOfReturn : 10,     //int, number of maximum returned results, default: undefined
+        }
+    );
+
+    var canvas = document.getElementById("can");
+    var height = canvas.height = window.innerHeight;
+    var width = canvas.width = window.innerWidth;
+    $(window).resize(function(){
+      var canvas = document.getElementById("can");
+      var height = canvas.height = window.innerHeight;
+      var width = canvas.width = window.innerWidth;
+      can1.erase();
+    });
+    var mouseIsDown = false;
+
+canvas.onmousedown = function(e){
+
+    mouseIsDown = true;
+}
+canvas.onmouseup = function(e){
+    if(mouseIsDown) mouseClick(e);
+
+    mouseIsDown = false;
+}
+
+canvas.onmousemove = function(e){
+    if(!mouseIsDown) return;
+
+    return false;
+}
+function mouseClick(e){
+    // click action
+    can1.recognize();
+}
+
+
+    // //recognize captured trace
+    // can1.recognize();
+    //
+    // //Clear canvas, captured trace, and stored steps
+    // can1.erase();
+//
+//     var trace =
+//     [   //the trace is an array of strokes
+//         [   //a stroke is an array of pairs of captured (x, y) coordinates
+//             [300, 310, 320, 330, 340], //x coordinate
+//             [320, 320, 320, 320, 320]  //y coordinate
+//             //each pair of (x, y) coordinates represents one sampling point
+//         ],
+//         [
+//              [320, 320, 320, 320, 320],
+//              [300, 310, 320, 330, 340]
+//         ]
+//     ];
+//     var options = {
+//     width : 800,         //int, width of the writing area, default: undefined
+//     height : 800,        //int, height of the writing area, default: undefined
+//     language : "zh_TW",  //string, language of input trace, default: "zh_TW"
+//     numOfWords : 1,      //int, number of words of input trace, default: undefined
+//     numOfReturn : 5,     //int, number of maximum returned results, default: undefined
+// };
+// var callback = function(result, err){
+//     if(err) throw err;
+//     else console.log(result);
+// };
+//     handwriting.recognize(trace, options, callback);
+</script>
+
+</body>
+</html>

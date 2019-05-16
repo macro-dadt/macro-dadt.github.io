@@ -1,0 +1,33 @@
+Report created: 
+	5/7/2019	4:50:26 PM
+
+Project name: logo-motion.aep
+
+Source files collected to: 
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\LOGO MOTION folder
+
+Source files collected: All
+
+Collected comps:  
+	Comp 1
+	logo-moress motion
+	R-motion
+	' motion
+	item 
+	TEXT
+	
+Number of collected files:  1
+
+Size of collected files:  381 KB
+
+Collected source files: 
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\logo-moress motion.ai
+	
+Rendering plug-ins:
+	Classic 3D
+	
+Effects used:  1
+
+Effect:  Puppet
+	
+

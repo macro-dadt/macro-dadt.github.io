@@ -1,0 +1,41 @@
+Report created: 
+	5/7/2019	4:47:35 PM
+
+Project name: THEMORESS.aep
+
+Source files collected to: 
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\Screeb 1 folder
+
+Source files collected: All
+
+Collected comps:  
+	Comp 1
+	background1
+	BACKGROUND-MOVING
+	MUSIC-WAVE
+	younglady
+	young man
+	oldman 2
+	Marco-Compose
+	younglady-compose
+	
+Number of collected files:  4
+
+Size of collected files:  27.7 MB
+
+Collected source files: 
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\background1.ai
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\oldman.ai
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\young man.ai
+	K:\E - WORK\STARTUP\ExpressDesign\SERVICE\CLIENT\THEMORESS\younglady.ai
+	
+Rendering plug-ins:
+	Classic 3D
+	
+Effects used:  2
+
+Effect:  Camera Lens Blur
+	
+Effect:  Puppet
+	
+

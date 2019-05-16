@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en" class="no-js" data-scroll-dir-x="0" data-scroll-dir-y="-1">
+<head>
+
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-itunes-app" content="app-id=700586085">
+  <meta name="google-play-app" content="app-id=com.interlink.BabyMap">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="styles/index.css">
+
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|IM+Fell+Double+Pica:400italic' rel='stylesheet' type='text/css'>
+
+  <!-- <link rel="stylesheet" href="css/animate.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/plitting.min.js"></script>
+	<script src="js/scroll-out.min.js"></script>
+	<script src="js/main1.js"></script> <!-- Modernizr -->
+  <!-- <script src="js/jquery.scrollLock.js"></script> -->
+  <!-- <script src="js/jquery.nicescroll.js"></script> -->
+
+
+
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script>
+  window.console = window.console || function(t) {};
+</script>
+<style>
+/* html {
+  scroll-behavior: smooth;
+} */
+.kf_credit {
+  position: fixed;
+  bottom: 0.5em;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 10px;
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(.84,.01,.14,.98);
+  animation: kf_credit_slide-in 0.8s cubic-bezier(.06,.44,0,.98) 0.4s both;
+}
+@keyframes kf_credit_slide-in { from { transform: translateY(100%); opacity: 0; } }
+
+.kf_credit_faces {
+  position: relative;
+  width: 6em;
+  height: 3em;
+  perspective: 400px;
+  transform-style: preserve-3d;
+}
+
+.kf_credit_face {
+  width: 50%;
+  position: absolute;
+  top: 0; right: 0.5em; bottom: 0; left: 0.5em;
+  margin: auto;
+  transition: transform 0.4s cubic-bezier(.84,.01,.14,.98);
+}
+.kf_credit_face.-shaw { right: auto; }
+.kf_credit_face.-david { left: auto; transition-delay: 0.1s; z-index: 4; transform: translateZ(10px) rotateY(0deg) ; }
+
+.kf_credit:hover .kf_credit_face {
+transform: rotateY(360deg);
+}
+.kf_credit:hover .kf_credit_face.-david {
+transform: translateZ(10px) rotateY(360deg);
+}
+.supportimg{
+  cursor: pointer;
+}
+.supportimg1{
+  cursor: pointer;
+}
+
+.supportimg2{
+  cursor: pointer;
+  height:700px;
+  width: 350px;
+  opacity: 1;
+  opacity: calc( 1 + var(--viewport-y) );
+
+}
+
+.supportimg3{
+  cursor: pointer;
+  height:500px;
+  width: 250px;
+  opacity: 1;
+  opacity: calc( 1 + var(--viewport-y) );
+}
+
+.ipimg{
+  position: absolute;
+  left: 60%;
+  top: 37%;
+}
+.ipimg1{
+  position: absolute;
+  left: 64%;
+  top: 44%;
+}
+#downloadarea{
+  position: absolute;
+  left: 55%;
+  top: 65%;
+}
+.downloadimg{
+  cursor: pointer;
+  height:90px;
+  width: 220px;
+}
+#selectlantext{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+#selectlan{
+  position: absolute;
+  left: 10%;
+  top: 65%;
+}
+#supportcoutext{
+  position: absolute;
+  top: 70%;
+  left: 10%;
+}
+#supportcou{
+  position: absolute;
+  left: 10%;
+  top: 75%;
+}
+
+@media only screen and (max-width: 1300px) {
+  .supportimg2{
+    height:500px;
+    width: 270px;
+  }
+  .supportimg3{
+    height:386px;
+    width: 238px;
+  }
+  .ipimg{
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 60%;
+  }
+  .ipimg1{
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 64%;
+  }
+
+}
+@media only screen and (max-width: 650px) {
+  #downloadarea{
+    left: 0px;
+    top: 81%;
+    width: 100%;
+  }
+  .downloadimg{
+    cursor: pointer;
+    height:40px;
+    width: 130px;
+  }
+  #selectlantext{
+    top: 51%;
+    left: 0px;
+    width: 100%;
+  }
+  #selectlan{
+    top: 57%;
+    left: 0px;
+    width: 100%;
+  }
+  #supportcoutext{
+    position: absolute;
+    top: 64%;
+    left: 0px;
+    width: 100%;
+  }
+  #supportcou{
+    position: absolute;
+    left: 0px;
+    top: 70%;
+    width: 100%;
+  }
+  .intro-heading{
+    top: 27% !important;
+  }
+
+  .supportimg2{
+    height:320px;
+    width: 180px;
+  }
+  .supportimg3{
+    height:250px;
+    width: 160px;
+  }
+  .ipimg{
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  .ipimg1{
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+
+  .figure {
+    height: 100vh !important;
+  }
+
+  #svgContainer svg{
+    width:auto !important;
+    height:100vh !important;
+    transform: translate3d(-25%, 0px, 0px) !important;
+  }
+  #svgContainer1 svg{
+    width:auto !important;
+    height:80vh !important;
+    transform: translate3d(-25%, 0px, 0px) !important;
+  }
+  #svgContainer1_1 svg{
+    width:auto !important;
+    height:80vh !important;
+    transform: translate3d(-25%, 0px, 0px) !important;
+  }
+  #svgContainer2 svg{
+    width:auto !important;
+    height:100vh !important;
+    transform: translate3d(-25%, 0px, 0px) !important;
+  }
+
+}
+
+</style>
+
+
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+	var tmpscr=true;
+  var tmpscro=0;
+// 	$(window).scroll(function (event) {
+//     var scroll = $(window).scrollTop();
+//     // Do something
+// 		// console.log(scroll);
+//     if(tmpscro>scroll){
+//       tmpscro=scroll;
+//     }else{
+//       if(scroll<500&&scroll>3){
+//   			if(tmpscr){
+//   				tmpscr=false;
+//           var secondp=$(window).height() * 1.2;
+//   				$('body, html').animate({ scrollTop: secondp }, 'slow', function() {tmpscr=true;console.log(tmpscr);});
+//   			}
+//   		}
+//       tmpscro=scroll;
+//     }
+//     // console.log(tmpscro);
+//
+// 		// if(tmpscr<scroll){
+// 		// 	if(scroll<689){
+// 		// 		$('body, html').animate({ scrollTop: 689 }, 'slow', function() {tmpscr=689;console.log(tmpscr);});
+// 		// 		// $(window).scrollTop(689);
+// 		// 	}
+// 		// }else{
+// 		// 	if(scroll<689){
+// 		// 		$('body, html').animate({ scrollTop: 0 }, 'slow', function() {tmpscr=0;console.log(tmpscr);});
+// 		// 		// $(window).scrollTop(0);
+// 		// 	}
+// 		// }
+//
+// });
+
+$(function () {
+  // $("body").niceScroll();
+  $('#selectlan').on('click','.supportimg',function(){
+    console.log($(this).attr("data-keyword"));
+    $("#supportcou").empty();
+
+    var i;
+    for (i = 0; i < 5; i++) {
+      $("#supportcou").append("<img class='supportimg1' src='"+$(this).attr("data-keyword")+"' onerror='this.style.display = "+'"'+"none"+'"'+";' width='50' height='50'>");
+    }
+    if($(this).attr("data-ios")==""){
+      document.getElementById("downios").onclick = function() {
+        alert('It is not support!');
+        return false;
+      };
+      document.getElementById("downios").href="#";
+    }else{
+      document.getElementById("downios").onclick = function() {
+      };
+      document.getElementById("downios").href=$(this).attr("data-ios");
+    }
+    if($(this).attr("data-android")==""){
+      document.getElementById("downandroid").onclick = function() {
+        alert('It is not support!');
+        return false;
+      };
+      document.getElementById("downandroid").href="#";
+    }else{
+      document.getElementById("downandroid").onclick = function() {
+      };
+      document.getElementById("downandroid").href=$(this).attr("data-android");
+    }
+
+
+  });
+  $.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+  $(window).on('touchend', function() {
+     $(window).trigger('scroll');
+   });
+  $(window).on('touchstart touchend touchmove mousewheel touchcancel gesturestart gestureend gesturechange orientationchange', function(){
+        //alert($(window).scrollTop());
+        $(window).trigger('scroll');
+    });
+  $(window).on('resize scroll', function() {
+    var scroll = $(window).scrollTop();
+    // Do something
+		// console.log(scroll);
+    // if(tmpscro>scroll){
+    //   tmpscro=scroll;
+    // }else{
+    //   if(scroll<$("#svgContainer").offset().top&&scroll>3){
+    //     $(window).scrollTop( $("#svgContainer").offset().top );
+    //     tmpscro=scroll;
+    //
+  	// 		// if(tmpscr){
+  	// 		// 	tmpscr=false;
+    //     //   // disable_scroll();
+    //     //
+    //     //   // var secondp=$(window).height() * 2.4;
+    //     //   // var secondp=$("#svgContainer").offset().top;
+    //     //
+    //     //   console.log("1");
+    //     //   $('html, body').stop().animate({'scrollTop': $("#svgContainer").offset().top}, 'normal','swing').delay(2).promise().done(function () {
+    //     //     tmpscr=true;console.log(tmpscr);console.log("2");
+    //     //   });
+    //     //   console.log("3");
+    //     //
+  	// 		// 	// $('html,body').stop().animate({ scrollTop: $("#svgContainer").offset().top }, 'normal','swing', function() {
+    //     //   //   tmpscr=true;
+    //     //   //   console.log(tmpscr);
+    //     //   //   enable_scroll();
+    //     //   // });
+    //     //
+    //     //   // $('html,body').animate({ scrollTop: scroll+30 }, 1,'swing', function() {
+    //     //   //   tmpscr=true;
+    //     //   //   console.log(tmpscr);
+    //     //   //   tmpscro=scroll;
+    //     //   //   enable_scroll();
+    //     //   // });
+    //     //
+  	// 		// }
+  	// 	}else{
+    //     tmpscro=scroll;
+    //   }
+    // }
+
+if ($('#svgContainer1').isInViewport()) {
+  console.log("play svgContainer1");
+  animItem1.play();
+}else{
+  // animItem1.destroy();
+  // animItem1 = bodymovin.loadAnimation({
+  //   wrapper: svgContainer1,
+  //   animType: 'svg',
+  //   path: 'scripts/NEW-S2/JSON 1/data.json'
+  // });
+  animItem1.pause();
+}
+
+
+if ($('#svgContainer2').isInViewport()) {
+  console.log("play svgContainer2");
+  animItem2.play();
+}else{
+  animItem2.stop();
+}
+  $('.colorimg').each(function() {
+      var activeColor = $(this).attr('id');
+    if ($(this).isInViewport()) {
+      $(this).empty();
+      $(this).append("<img class='supportimg3' src='"+$(this).attr("data-keyword")+"' onerror='this.style.display = "+'"'+"none"+'"'+";'>");
+      $(this).addClass('animated');
+      $(this).addClass('zoomIn');
+      // $(this).addClass('zoomIn');
+    }else{
+      $(this).empty();
+      $(this).removeClass('animated');
+      $(this).addClass('zoomIn');
+      // $(this).removeClass('zoomIn');
+    }
+  });
+});
+
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+}
+
+});
+</script>
+</head>
+
+<body translate="no">
+
+
+<div id="svgContainer_logo"> </div>
+
+<div class="main">
+<section class="intro-section">
+  <!-- <h1 class="intro-heading" style="top: 30%;">Moress</h1> -->
+  <p style="top: 45%;position: absolute;">Power of AI: Learn more with less effort</p>
+  <p id="selectlantext" >Choose which language you want to learning.</p>
+  <div id="selectlan" >
+    <img class="supportimg" data-ios="https://itunes.apple.com/jp/app/bebima/id700586085" data-android="https://play.google.com/store/apps/details?id=com.trim.macro.babymapgit" data-keyword="img/en_us.png" src="img/en_us.png" alt="en_us" height="50" width="50">
+    <img class="supportimg" data-ios="" data-android="https://play.google.com/store/apps/details?id=com.trim.macro.babymapgit" data-keyword="img/cn.png" src="img/cn.png" alt="cn" height="50" width="50">
+    <img class="supportimg" data-ios="" data-android="" data-keyword="img/en.png" src="img/en.png" alt="en" height="50" width="50">
+    <img class="supportimg" data-ios="https://itunes.apple.com/jp/app/bebima/id700586085" data-android="" data-keyword="img/fn.png" src="img/fn.png" alt="fn" height="50" width="50">
+    <img class="supportimg" data-ios="https://itunes.apple.com/jp/app/bebima/id700586085" data-android="https://play.google.com/store/apps/details?id=com.trim.macro.babymapgit" data-keyword="img/gn.png" src="img/gn.png" alt="gn" height="50" width="50">
+  </div>
+  <p id="supportcoutext" >Support which country.</p>
+  <div id="supportcou" >
+    <img class="supportimg1" src="img/en_us.png" alt="en" height="50" width="50">
+    <img class="supportimg1" src="img/en_us.png" alt="en" height="50" width="50">
+    <img class="supportimg1" src="img/en_us.png" alt="en" height="50" width="50">
+    <img class="supportimg1" src="img/en_us.png" alt="en" height="50" width="50">
+    <img class="supportimg1" src="img/en_us.png" alt="en" height="50" width="50">
+  </div>
+  <div id="downloadarea">
+    <a id="downandroid" class="downloadimg" target="_blank" style="display: inline-block;" href="https://play.google.com/store/apps/details?id=com.trim.macro.babymapgit"><img class="downloadimg " src="img/google-play.png" alt="google-play" ></a>
+    <a id="downios" class="downloadimg" target="_blank" style="display: inline-block;" href="https://itunes.apple.com/jp/app/bebima/id700586085"><img class="downloadimg " src="img/app-store.png" alt="app-store" ></a>
+  </div>
+</section>
+
+
+
+
+<section class="content-section" data-scroll="in" style="--viewport-y:-1; --visible-y:0.2002;">
+  <figure class="figure"><div id="svgContainer"> </div></figure>
+  <div class="content">
+    <header class="header">
+      <div class="subheading">Recommender System</div>
+      <h2 id="autoscrollele" class="heading words chars splitting" style="--word-total:5; --char-total:32;">
+        <span class="word" data-word="Not" style="--word-index:0;"><span class="char" data-char="N" style="--char-index:0;">Not all just what you want</span></span>
+        </h2>
+    </header>
+    <p class="paragraph">
+We suggest words you may like to learn base on your concern and your experience with our app. We also provide a offline dictionary with beautiful illustrations and native accent audio
+    </p>
+
+  </div>
+  <div class="ipimg">
+    <img class="supportimg2" src="img/iphone6.png" alt="iphone6" >
+  </div>
+  <div data-keyword="img/VV2w.gif" class="colorimg ipimg1">
+    <img class="supportimg3" src="img/VV2w.gif" alt="iphone6" >
+  </div>
+</section>
+
+
+
+<section class="content-section" data-scroll="out" style="--viewport-y:-1; --visible-y:0;">
+  <figure class="figure" style="background-color: #7E5E93;"><div id="svgContainer1"> </div>
+  <div id="svgContainer1_1"> </div></figure>
+  <div class="content">
+    <header class="header">
+      <div class="subheading">Remind the words fading in your memory before they really gone</div>
+      <h2 class="heading words chars splitting" style="--word-total:5; --char-total:32;">
+        <span class="word" data-word="Not" style="--word-index:0;"><span class="char" data-char="N" style="--char-index:0;">The more time you pratice the beter the app understand your memory</span></span>
+        </h2>
+    </header>
+    <p class="paragraph">
+no worddddddd
+    </p>
+  </div>
+  <div class="ipimg">
+    <img class="supportimg2" src="img/iphone6.png" alt="iphone6" >
+  </div>
+  <div data-keyword="img/VV2w.gif" class="colorimg ipimg1">
+    <img class="supportimg3" src="img/VV2w.gif" alt="iphone6" >
+  </div>
+</section>
+
+<!-- <div id="svgContainer2"> </div>
+<div style="height:70%;"></div> -->
+
+<section class="content-section" data-scroll="out" style="--viewport-y:-1; --visible-y:0;">
+  <figure class="figure"><div id="svgContainer2"> </div></figure>
+  <div class="content">
+    <header class="header">
+      <div class="subheading">Streng your memory by listening your words in your free time</div>
+      <h2 class="heading words chars splitting" style="--word-total:5; --char-total:32;">
+        <span class="word" data-word="Not" style="--word-index:0;"><span class="char" data-char="N" style="--char-index:0;">20,000 audio file are available</span></span>
+        </h2>
+    </header>
+    <p class="paragraph">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem numquam.
+    </p>
+  </div>
+  <div class="ipimg">
+    <img class="supportimg2" src="img/iphone6.png" alt="iphone6" >
+  </div>
+  <div data-keyword="img/VV2w.gif" class="colorimg ipimg1">
+    <img class="supportimg3" src="img/VV2w.gif" alt="iphone6" >
+  </div>
+</section>
+</div>
+
+
+<!-- <script src="https://labs.nearpod.com/bodymovin/demo/markus/halloween/lottie.min.js"></script> -->
+<script src="scripts/index1.js"></script>
+<script src="scripts/index.js"></script>
+</body>
+</html>

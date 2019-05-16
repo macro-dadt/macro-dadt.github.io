@@ -1,0 +1,83 @@
+html {
+  margin: 0;
+  padding: 0;
+  /* background-color: #1E1C26; */
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  /* background-color: #000; */
+}
+#svgContainer_logo {
+  max-width: 100%;
+  max-height: 70%;
+  /* background-color: #1E1C26; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100vh;
+  /* margin: auto; */
+  z-index: -1;
+  /* opacity: 1 !important;
+transform: none !important; */
+}
+#svgContainer {
+  max-width: 100%;
+  /* background-color: #1EC2C6; */
+  position: relative;
+  left: 0;
+  right: 0;
+  /* margin: auto; */
+  /* opacity: 1 !important;
+transform: none !important; */
+}
+#svgContainer svg{
+  height:auto !important;
+}
+#svgContainer1 {
+  max-width: 100%;
+  background-color: #7E5E93;
+  position: relative;
+  left: 0;
+  right: 0;
+  /* margin: auto; */
+  /* z-index: 9999; */
+  /* opacity: 1 !important;
+transform: none !important; */
+}
+#svgContainer1 svg{
+  height:auto !important;
+}
+#svgContainer1_1 {
+  max-width: 100%;
+  background-color: #7E5E93;
+  position: relative;
+  left: 0;
+  right: 0;
+  /* margin: auto; */
+  /* z-index: 9999; */
+  display: none;
+  /* opacity: 1 !important;
+transform: none !important; */
+}
+#svgContainer1_1 svg{
+  height:auto !important;
+}
+#svgContainer2 {
+  max-width: 100%;
+  background-color: #bdb76b;
+  position: relative;
+  left: 0;
+  right: 0;
+  /* margin: auto; */
+  /* z-index: 9999; */
+  /* opacity: 1 !important;
+transform: none !important; */
+}
+#svgContainer2 svg{
+  height:auto !important;
+}
