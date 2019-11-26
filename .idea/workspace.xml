@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/privacypolicy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="271">
+              <caret line="191" column="214" selection-start-line="191" selection-start-column="214" selection-end-line="191" selection-end-column="214" />
               <folding>
                 <element signature="e#1219#1225#0" expanded="true" />
                 <element signature="e#1721#1727#0" expanded="true" />
@@ -69,6 +69,7 @@
       <find>&lt;!-- &lt;h1 class=&quot;intro-heading&quot; style=&quot;top: 30%;&quot;&gt;Moress&lt;/h1&gt; --&gt;</find>
       <find>play.</find>
       <find>babymap</find>
+      <find>QUESTIONS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,12 +140,12 @@
       <option name="presentableId" value="Default" />
       <updated>1573028757738</updated>
       <workItem from="1573028759218" duration="527000" />
-      <workItem from="1574778282293" duration="244000" />
+      <workItem from="1574778282293" duration="479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="771000" />
+    <option name="totallyTimeSpent" value="1006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="111" y="45" width="1282" height="855" extended-state="0" />
@@ -193,8 +194,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/privacypolicy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="271">
+          <caret line="191" column="214" selection-start-line="191" selection-start-column="214" selection-end-line="191" selection-end-column="214" />
           <folding>
             <element signature="e#1219#1225#0" expanded="true" />
             <element signature="e#1721#1727#0" expanded="true" />
